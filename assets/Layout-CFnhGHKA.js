@@ -1,0 +1,1 @@
+import{p as s}from"./chunk-EF7DTUVF-DePYFLeH.js";import{N as o}from"./Navbar-BN-7-YAR.js";import{F as a}from"./Footer-CXkfyUfl.js";function x({children:r}){return s.jsxs("div",{className:"min-h-screen flex flex-col",children:[s.jsx(o,{}),s.jsx("main",{className:"flex-1",children:r}),s.jsx(a,{})]})}export{x as L};

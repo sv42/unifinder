@@ -6,7 +6,14 @@ export default defineConfig(({ command }) => {
   const isProduction = command === 'build';
   
   return {
-    base: isProduction ? '/unifinder/' : '/',
+    base: '/',
     plugins: [tailwindcss(), reactRouter()],
+    build: {
+      rollupOptions: {
+        output: {
+          manualChunks: undefined,
+        },
+      },
+    },
   };
 }); 

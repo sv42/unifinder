@@ -190,7 +190,7 @@ export default function UniversityMap() {
   useEffect(() => {
     console.log('UniversityMap: Завантаження університетів...');
     fetchUniversities();
-  }, [fetchUniversities]);
+  }, []); // Викликаємо тільки один раз при монтуванні
 
   // Логуємо зміни в даних для діагностики
   useEffect(() => {

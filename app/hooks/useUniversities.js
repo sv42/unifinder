@@ -30,7 +30,7 @@ export function useUniversities() {
     } finally {
       setLoading(false);
     }
-  }, [loading]);
+  }, []); // Видаляємо залежність від loading
 
   // Пошук університетів
   const searchUniversities = useCallback(async (searchParams) => {
@@ -175,7 +175,7 @@ export function useUniversities() {
     if (universities.length === 0 && !loading) {
       fetchUniversities();
     }
-  }, []); // Порожній масив залежностей - викликається тільки один раз
+  }, [universities.length, loading, fetchUniversities]); // Додаємо правильні залежності
 
   return {
     universities,

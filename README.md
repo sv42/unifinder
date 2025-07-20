@@ -1,6 +1,19 @@
-# Welcome to React Router!
+# 🎓 University Finder
 
-A modern, production-ready template for building full-stack React applications using React Router.
+Сучасний веб-додаток для пошуку та порівняння університетів по всій Європі.
+
+## 🌟 Особливості
+
+- 🗺️ **Інтерактивна карта** університетів Європи
+- 🔍 **Пошук та фільтрація** за країною, рейтингом, вартістю
+- 📊 **Порівняння** університетів
+- ❤️ **Улюблені** університети
+- 🤖 **AI асистент** для консультацій
+- 📱 **Адаптивний дизайн**
+
+## 🚀 Живий сайт
+
+**[https://vovka.github.io/university-finder](https://vovka.github.io/university-finder)**
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
 
@@ -10,7 +23,7 @@ A modern, production-ready template for building full-stack React applications u
 - ⚡️ Hot Module Replacement (HMR)
 - 📦 Asset bundling and optimization
 - 🔄 Data loading and mutations
-- 🔒 TypeScript by default
+- 🔒 JavaScript for simplicity
 - 🎉 TailwindCSS for styling
 - 📖 [React Router docs](https://reactrouter.com/)
 

@@ -1,0 +1,11 @@
+# Supabase Configuration
+# Заміни ці значення на реальні з твого Supabase проекту
+# URL має починатися з https:// і закінчуватися на .supabase.co
+VITE_SUPABASE_URL=https://your-project-id.supabase.co
+VITE_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFiY2RlZmdoaWprbG1ub3AiLCJyb2xlIjoiYW5vbiIsImlhdCI6MTYzNDU2Nzg5MCwiZXhwIjoxOTUwMTQzODkwfQ.example
+
+# OpenAI Configuration (для майбутнього)
+VITE_OPENAI_API_KEY=your_openai_api_key
+
+# Mapbox Configuration (для карти)
+VITE_MAPBOX_ACCESS_TOKEN=your_mapbox_access_token 

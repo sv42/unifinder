@@ -13,7 +13,7 @@
 
 ## 🚀 Живий сайт
 
-**[https://vovka.github.io/university-finder](https://vovka.github.io/university-finder)**
+**[https://vovka.github.io/unifinder](https://vovka.github.io/unifinder)**
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
 

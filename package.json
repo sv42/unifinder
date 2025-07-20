@@ -2,7 +2,7 @@
   "name": "university-finder",
   "private": true,
   "type": "module",
-  "homepage": "https://sv42.github.io/unifinder",
+  "homepage": "https://sv42.github.io/unifinder/",
   "scripts": {
     "build": "react-router build",
     "dev": "react-router dev",

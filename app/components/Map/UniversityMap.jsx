@@ -22,8 +22,11 @@ function ClientMap({ filteredUniversities, onUniversitySelect }) {
     // Завантажуємо Leaflet тільки на клієнті
     const loadMap = async () => {
       try {
+        console.log('ClientMap: Початок завантаження карти...');
+        
         // Додаємо CSS для Leaflet
         if (!document.querySelector('link[href*="leaflet"]')) {
+          console.log('ClientMap: Додавання Leaflet CSS...');
           const link = document.createElement('link');
           link.rel = 'stylesheet';
           link.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
@@ -31,10 +34,13 @@ function ClientMap({ filteredUniversities, onUniversitySelect }) {
         }
 
         // Динамічно імпортуємо React Leaflet компоненти
+        console.log('ClientMap: Імпорт React Leaflet...');
         const { MapContainer, TileLayer, Marker, Popup, ZoomControl } = await import('react-leaflet');
+        console.log('ClientMap: Імпорт Leaflet...');
         const L = await import('leaflet');
 
         // Виправлення для іконок Leaflet
+        console.log('ClientMap: Налаштування іконок...');
         delete L.default.Icon.Default.prototype._getIconUrl;
         L.default.Icon.Default.mergeOptions({
           iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png',
@@ -42,6 +48,7 @@ function ClientMap({ filteredUniversities, onUniversitySelect }) {
           shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
         });
 
+        console.log('ClientMap: Встановлення компонентів карти...');
         setMapComponents({
           MapContainer,
           TileLayer,
@@ -49,8 +56,11 @@ function ClientMap({ filteredUniversities, onUniversitySelect }) {
           Popup,
           ZoomControl
         });
+        console.log('ClientMap: Карта успішно завантажена!');
       } catch (error) {
         console.error('Помилка завантаження карти:', error);
+        console.error('Деталі помилки:', error.message);
+        console.error('Stack trace:', error.stack);
       }
     };
 
@@ -171,7 +181,9 @@ export default function UniversityMap() {
 
   // Перевіряємо чи ми на клієнті
   useEffect(() => {
+    console.log('UniversityMap: Перевірка клієнта...');
     setIsClient(true);
+    console.log('UniversityMap: isClient встановлено в true');
   }, []);
 
   // Завантажуємо університети при монтуванні компонента
@@ -348,10 +360,13 @@ export default function UniversityMap() {
 
       {/* Карта або fallback */}
       {!loading && !error && isClient ? (
-        <ClientMap 
-          filteredUniversities={filteredUniversities}
-          onUniversitySelect={setSelectedUniversity}
-        />
+        <>
+          {console.log('UniversityMap: Рендеринг ClientMap з', filteredUniversities.length, 'університетів')}
+          <ClientMap 
+            filteredUniversities={filteredUniversities}
+            onUniversitySelect={setSelectedUniversity}
+          />
+        </>
       ) : !loading && !error && (
         <div className="w-full h-full bg-gray-50 flex items-center justify-center">
           <div className="bg-white p-8 rounded-lg shadow-lg max-w-2xl w-full mx-4">
